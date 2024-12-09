@@ -35,7 +35,7 @@
   
   <service name="HelloWorldService">
     <port name="HelloWorldPort" binding="tns:HelloWorldBinding">
-      <soap:address location="http://localhost:3000/>
+      <soap:address location="http://localhost:3000/"/>
     </port>
   </service>
 </definitions>
