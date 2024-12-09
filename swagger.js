@@ -1,17 +1,17 @@
 const swaggerDocument = {
     swagger: "2.0",
     info: {
-      title: "API SOAP",
-      description: "Documentación de la API SOAP - Hola Mundo",
+      title: "SOAP API",
+      description: "Documentation for the SOAP API - Hello World",
       version: "1.0.0"
     },
     paths: {
       "/wsdl": {
         "get": {
-          "summary": "Obtener el WSDL del servicio SOAP con el get del Hola Mundo",
+          "summary": "Get the WSDL of the SOAP service with the Hello World GET method",
           "responses": {
             "200": {
-              "description": "WSDL disponible"
+              "description": "WSDL available"
             }
           }
         }
@@ -20,4 +20,4 @@ const swaggerDocument = {
   };
   
   module.exports = swaggerDocument;
-    
+  
