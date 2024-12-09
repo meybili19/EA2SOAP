@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://tempuri.org/"
+             name="HelloWorldService"
+             targetNamespace="http://tempuri.org/">
+  
+  <message name="sayHelloRequest">
+    <part name="name" type="xsd:string"/>
+  </message>
+  
+  <message name="sayHelloResponse">
+    <part name="greeting" type="xsd:string"/>
+  </message>
+  
+  <portType name="HelloWorldPortType">
+    <operation name="sayHello">
+      <input message="tns:sayHelloRequest"/>
+      <output message="tns:sayHelloResponse"/>
+    </operation>
+  </portType>
+  
+  <binding name="HelloWorldBinding" type="tns:HelloWorldPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="sayHello">
+      <soap:operation soapAction="http://tempuri.org/sayHello"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://tempuri.org/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://tempuri.org/"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="HelloWorldService">
+    <port name="HelloWorldPort" binding="tns:HelloWorldBinding">
+      <soap:address location="http://localhost:3000/soap"/>
+    </port>
+  </service>
+</definitions>
