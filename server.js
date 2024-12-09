@@ -41,7 +41,7 @@ soap.listen(app, '/soap', service, wsdlPath);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get('/', (req, res) => {
-  res.send('Servidor SOAP con documentación Swagger');
+  res.send('Hello world from JavaScript with  architecture style SOAP with documentation Swagger <3');
 });
 
 // Iniciar el servidor
