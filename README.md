@@ -37,6 +37,11 @@ This project implements a SOAP API with a "Hello World" service.
 You can access the WSDL of the service at:
 [http://localhost:3000/wsdl](http://localhost:3000/wsdl)
 
+## docker
+    - docker network create soap-network
+    - docker build -t meybili/soap-api .
+    - docker run -d --name soap-api-container --network soap-network -p 3000:3000 meybili/soap-api
+
 
 ## Example of ejecution
 ![alt text](image.png)
